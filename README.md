@@ -1,16 +1,11 @@
 \# Unix Shell
 
-&nbsp;
 
-A lightweight Unix-style command shell written in C to explore
+A lightweight Unix-style command shell written in C to explore process creation and management on POSIX systems.
 
-process creation and management on POSIX systems.
-
-&nbsp;
 
 \#\# Features
 
-&nbsp;
 
 \- Executes standard Unix commands such as \`ls\`, \`pwd\`, and \`date\`
 
@@ -30,11 +25,9 @@ process creation and management on POSIX systems.
 
 \- Supports \`exit\` and \`quit\`
 
-&nbsp;
 
 \#\# Example
 
-&nbsp;
 
 \`\`\`text
 
@@ -42,22 +35,44 @@ mysh\> pwd
 
 /Users/example/unix-shell
 
-&nbsp;
 
 mysh\> ls \-l
 
 ...
 
-&nbsp;
 
 mysh\> sleep 5 &
 
 \[background process 12345 started\]
 
-&nbsp;
 
 mysh\>
 
 \[background process 12345 finished\]
 
-&nbsp;
+```
+
+## Build
+
+On macOS or Linux:
+
+```bash
+clang -std=c11 -Wall -Wextra -pedantic shell.c -o shell
+```
+
+## Run
+
+```bash
+./shell
+```
+
+## Concepts Practiced
+
+- Process creation with `fork()`
+- Program execution with `execvp()`
+- Parent and child processes
+- Foreground and background execution
+- Process synchronization with `waitpid()`
+- Background process cleanup
+- Basic command parsing
+- Error handling for process creation and command execution
